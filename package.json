@@ -1,0 +1,19 @@
+{
+  "name": "my-schedule",
+  "version": "1.0.0",
+  "description": "Chrome Extension for tracking a student schedule on a rotating x-day cycle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirman-school/my-schedule.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mirman-school/my-schedule/issues"
+  },
+  "homepage": "https://github.com/mirman-school/my-schedule#readme"
+}
