@@ -1,4 +1,4 @@
-table, tr, td {
+table, th, td {
  /* I like expanding the border properties instead of using "border". It's easier to read */
     border-width: thin;
     border-style: solid;
