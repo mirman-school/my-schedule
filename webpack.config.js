@@ -1,32 +1,38 @@
-/*module.exports = {
-  entry: __dirname + "/src/index.js",
-  output: {
-    path: __dirname + "/build",
-    filename: "bundle.js"
-  }
-};*/
-
+var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
-  entry: __dirname + "/src/index.js",
+  entry: "./src",
   output: {
-    path: __dirname + "/build",
-    filename: 'bundle.js'
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
+    path: path.join(__dirname, "build/assets/js"),
+    filename: "bundle.js",
+    publicPath: "/assets/js"
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        loader: 'babel',
+        test: /\.js$/,
+        use: ["source-map-loader"],
+        enforce: "pre"
+      },
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
-        query: {
-          cacheDirectory: true,
-          presets: ['react', 'es2015']
-        }
-      }
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+  ],
+  devtool: "eval"
 }
