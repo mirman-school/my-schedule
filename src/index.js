@@ -4,7 +4,7 @@ import {render} from "react-dom";
 import Calendar from "./react_components/Calendar"
 
 render(
-    <Calendar days="4"/>, document.getElementById("root")
+    <Calendar days="4" periods="8"/>, document.getElementById("root")
 );
 /*
 const MySchedule = () => {
