@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Table, Label} from 'semantic-ui-react';
+import {days} from "../../config.json";
 export default class Calendar extends React.Component {
   render() {
     //header
-    const days = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     var headerCells = [];
     headerCells.push(<Table.HeaderCell>Period</Table.HeaderCell>)
     for(var day = 0; day < this.props.days; day++){
