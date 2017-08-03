@@ -30,5 +30,8 @@
     "react-dom": "^15.6.1",
     "source-map-loader": "^0.2.1",
     "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "semantic-ui-react": "^0.71.3"
   }
 }
