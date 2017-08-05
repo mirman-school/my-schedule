@@ -1,0 +1,28 @@
+{
+    "testdata": {
+        "A": {
+            "Period 1": {
+                "name": "English"
+            }
+        },
+        "Fun Day": {
+            "Period 1": {
+                "name": "DCB"
+            },
+            "Period 2": {
+                "name": "Web Apps II"
+            }
+        },
+        "Awesome Day": {
+            "Period 1": {
+                "name": "Algebra"
+            },
+            "Recess": {
+                "name": "Recess?"
+            },
+            "Recess II": {
+                "name": "After-recess munchie crunchie snacky time!"
+            }
+        }
+    }
+}
