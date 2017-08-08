@@ -1,27 +1,97 @@
 {
-    "testdata": {
-        "A": {
-            "Period 1": {
+    "testData": {
+        "cycleDays": {
+            "blarb": {
+                "name": "A"
+            },
+            "blerb": {
+                "name": "B"
+            },
+            "blirb": {
+                "name": "C"
+            },
+            "blorb": {
+                "name": "D"
+            },
+            "blurb": {
+                "name": "E"
+            },
+            "blyrb": {
+                "name": "F"
+            }
+        },
+        "periods": {
+            "blarb": {
+                "name": "Period 1",
+                "start": "8:00",
+                "end": "8:50"
+            },
+            "blerb": {
+                "name": "Period 2",
+                "start": "8:50",
+                "end": "9:40"
+            },
+            "blirb": {
+                "name": "Period 3",
+                "start": "9:40",
+                "end": "10:30"
+            },
+            "blorb": {
+                "name": "Recess",
+                "start": "10:30",
+                "end": "10:45"
+            },
+            "blurb": {
+                "name": "Period 4",
+                "start": "10:45",
+                "end": "11:35"
+            },
+            "blyrb": {
+                "name": "Period 5",
+                "start": "11:35",
+                "end": "12:25"
+            },
+            "blaarb": {
+                "name": "Lunch",
+                "start": "12:25",
+                "end": "1:00"
+            },
+            "blabrb": {
+                "name": "Period 6",
+                "start": "1:00",
+                "end": "1:50"
+            },
+            "blacrb": {
+                "name": "Period 7",
+                "start": "1:50",
+                "end": "2:40"
+            },
+            "bladrb": {
+                "name": "Period 8",
+                "start": "2:40",
+                "end": "3:30"
+            }
+        },
+        "mySchedule": {
+            "blarb": {
+                "periodId": "blarb",
+                "cycleDayId": "blarb",
                 "name": "English"
-            }
-        },
-        "Fun Day": {
-            "Period 1": {
-                "name": "DCB"
             },
-            "Period 2": {
-                "name": "Web Apps II"
-            }
-        },
-        "Awesome Day": {
-            "Period 1": {
-                "name": "Algebra"
+            "blerb": {
+                "periodId": "blerb",
+                "cycleDayId": "blarb",
+                "name": "Math"
             },
-            "Recess": {
-                "name": "Recess?"
+            "blirb": {
+                "periodId": "blerb",
+                "cycleDayId": "blarb",
+                "name": "Social Studies"
             },
-            "Recess II": {
-                "name": "After-recess munchie crunchie snacky time!"
+            "blorb": {
+                "periodId": "blerb",
+                "cycleDayId": "blarb",
+                "name": "Recess"
             }
         }
     }
