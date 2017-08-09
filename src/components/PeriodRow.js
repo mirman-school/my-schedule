@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "semantic-ui-react";
+import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
 
 const PeriodRow = ({period, periodClasses, cycleDays}) => {
@@ -25,7 +25,7 @@ const PeriodRow = ({period, periodClasses, cycleDays}) => {
     // Create our singleton time cell to hold the time label
     const timeCell = (
         <Table.Cell key={period.start}>
-            {period.name} ({period.start} - {period.end})
+            <Label>{period.start} - {period.end}</Label> {period.name} 
         </Table.Cell>
     );
 
