@@ -45,21 +45,19 @@ const Calendar = ({calendarData}) => {
   const periodRows =  _.keys(data.periods).map((p) => {
     const period = data.periods[p];
     const filteredPeriods = classesByPeriod(data.mySchedule, p);
-    return _.keys(filteredPeriods).map((k) => {
-      return (
+    return (
         <PeriodRow
-          key={k} 
+          key={period.name}
           period={period} 
           periodClasses={filteredPeriods} 
           cycleDays={data.cycleDays}
         />
-      )
-    })
+    );
   });
 
   //put it all together, like a sandwich
   return(
-    <Table>
+    <Table celled>
       {header}
       <Table.Body>
         {periodRows}
