@@ -1,11 +1,4 @@
 import React from "react";
-import {render} from "react-dom";
-//import my components
-import CalendarContainer from "./containers/CalendarContainer";
+import {getCalendar} from "./lib/actions";
 
-
-render(
-    <CalendarContainer />,
-    document.getElementById("root")
-);
-    
+getCalendar();
