@@ -2,8 +2,9 @@ import React from "react";
 import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
 import EditBox from "./EditBox";
+import {changeCellData} from "../lib/actions.js";
 
-const PeriodRow = ({period, periodClasses, cycleDays}) => {
+const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
 
     // Do some fancy filtering to get the right classes
     // TODO: Some sorting?
@@ -15,13 +16,21 @@ const PeriodRow = ({period, periodClasses, cycleDays}) => {
 
         // Guard for no result
         if(!cycleDayClass) return null;
-
+        var callback = (event, data, input) => {
+            var newVal = document.getElementById(input).value;
+            console.debug("A change was requested! Text: " + newVal + ". Now telling actions.js");
+            changeCellData(d, periodKey, newVal);
+        }
         return (
-            <EditBox trigger={
-            <Table.Cell key={d + cycleDayClass.periodId}>
-                {cycleDayClass.name}
-            </Table.Cell>
-            }/>
+            <EditBox
+                trigger={
+                    <Table.Cell key={d + cycleDayClass.periodId}>
+                        {cycleDayClass.name}
+                    </Table.Cell>
+                }
+                onClick={callback}
+                fillerText={cycleDayClass.name}
+            />
         );
     });
 
@@ -36,7 +45,7 @@ const PeriodRow = ({period, periodClasses, cycleDays}) => {
     const cells = [timeCell].concat(cycleCells);
 
     return (
-        <Table.Row>
+        <Table.Row key={"period-" + period.name}>
             {cells}
         </Table.Row>
     );
