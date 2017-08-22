@@ -44,22 +44,22 @@ const Calendar = ({calendarData}) => {
   // let the row handle the filtering by cycle day
   const periodRows =  _.keys(data.periods).map((p) => {
     const period = data.periods[p];
+    //const k = "row-" + _.keys(data.periods)[p];
+    console.log("rendering "+p);
     const filteredPeriods = classesByPeriod(data.mySchedule, p);
-    return _.keys(filteredPeriods).map((k) => {
-      return (
+    return (
         <PeriodRow
-          key={k} 
+          key={p}
           period={period} 
           periodClasses={filteredPeriods} 
           cycleDays={data.cycleDays}
         />
-      )
-    })
+    );
   });
 
   //put it all together, like a sandwich
   return(
-    <Table>
+    <Table celled>
       {header}
       <Table.Body>
         {periodRows}

@@ -84,14 +84,14 @@
                 "name": "Math"
             },
             "blirb": {
-                "periodId": "blerb",
-                "cycleDayId": "blarb",
+                "periodId": "blarb",
+                "cycleDayId": "blerb",
                 "name": "Social Studies"
             },
             "blorb": {
                 "periodId": "blerb",
-                "cycleDayId": "blarb",
-                "name": "Recess"
+                "cycleDayId": "blerb",
+                "name": "Science"
             }
         }
     }

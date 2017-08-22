@@ -1,12 +1,13 @@
 import React from "react";
-import { Table } from "semantic-ui-react";
+import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
+import EditBox from "./EditBox";
 
 const PeriodRow = ({period, periodClasses, cycleDays}) => {
 
     // Do some fancy filtering to get the right classes
     // TODO: Some sorting?
-    const cycleCells = _.keys(cycleDays).map((d) => {
+    var cycleCells = _.keys(cycleDays).map((d) => {
         const cycleDay = cycleDays[d];
         const cycleDayClass = periodClasses[_.findKey(periodClasses, (c) => {
             return c.cycleDayId === d;
@@ -16,16 +17,18 @@ const PeriodRow = ({period, periodClasses, cycleDays}) => {
         if(!cycleDayClass) return null;
 
         return (
+            <EditBox trigger={
             <Table.Cell key={d + cycleDayClass.periodId}>
                 {cycleDayClass.name}
             </Table.Cell>
+            }/>
         );
     });
 
     // Create our singleton time cell to hold the time label
     const timeCell = (
         <Table.Cell key={period.start}>
-            {period.name} ({period.start} - {period.end})
+            <Label>{period.start} - {period.end}</Label> {period.name} 
         </Table.Cell>
     );
 
