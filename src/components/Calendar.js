@@ -53,6 +53,7 @@ const Calendar = ({calendarData}) => {
           period={period} 
           periodClasses={filteredPeriods} 
           cycleDays={data.cycleDays}
+          periodKey={p}
         />
     );
   });
