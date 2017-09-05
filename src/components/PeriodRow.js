@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
 import EditBox from "./EditBox";
-import {changeCellData} from "../lib/actions.js";
+import {changeCellData, changePeriodData} from "../lib/actions.js";
 
 const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
 
@@ -30,6 +30,8 @@ const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
                 }
                 onClick={callback}
                 fillerText={cycleDayClass.name}
+                id={"editbox_" + d + "_" + periodKey}
+                key={"editbox-" + d + "-" + periodKey}
             />
         );
     });

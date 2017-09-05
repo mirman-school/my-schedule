@@ -38,6 +38,8 @@ const Calendar = ({calendarData}) => {
           }
           onClick={callback}
           fillerText={cycleDay.name}
+          id={"dayeditbox_" + c}
+          key={"dayeditbox-" + c}
       />
       
     );
