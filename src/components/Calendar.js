@@ -4,6 +4,8 @@ import {Table, Label} from 'semantic-ui-react';
 import _ from "lodash";
 import PeriodRow from "./PeriodRow";
 import { classesByPeriod } from "../lib/functions";
+import DayEditBox from "./DayEditBox";
+import { changeDayData } from "../lib/actions";
 
 const Calendar = ({calendarData}) => {
 
@@ -15,16 +17,29 @@ const Calendar = ({calendarData}) => {
 
   const columnKeys = _.keys(data.cycleDays);
 
-  // Spacer cell 
   const periodHeaderCell = (<Table.HeaderCell key={"timeColumn"}></Table.HeaderCell>); 
 
   // Computed cells
+
   const cycleCells = (columnKeys.map((c, idx) => {
     const cycleDay = data.cycleDays[c];
+    var callback = (event, data, input) => {
+        var newVal = document.getElementById(input).value;
+        console.debug("A day change was requested! Text: " + newVal + ". Now telling actions.js");
+        changeDayData(c, newVal);
+    }
+    
     return (
-      <Table.HeaderCell key={idx}>
-        {cycleDay.name}
-      </Table.HeaderCell>
+      <DayEditBox
+          trigger={
+            <Table.HeaderCell key={idx}>
+              {cycleDay.name}
+            </Table.HeaderCell>
+          }
+          onClick={callback}
+          fillerText={cycleDay.name}
+      />
+      
     );
   }));
 
@@ -45,7 +60,7 @@ const Calendar = ({calendarData}) => {
   const periodRows =  _.keys(data.periods).map((p) => {
     const period = data.periods[p];
     //const k = "row-" + _.keys(data.periods)[p];
-    console.log("rendering "+p);
+    console.debug("rendering "+p);
     const filteredPeriods = classesByPeriod(data.mySchedule, p);
     return (
         <PeriodRow

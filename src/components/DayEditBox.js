@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Popup, Input } from 'semantic-ui-react'
 
-export default class EditBox extends React.Component {
+export default class DayEditBox extends React.Component {
 
     render(){
-        var myId = "edit-" + this.props.id + "-text";
+        var myId = "dayedit-" + this.props.id + "-text";
         var content = (
             <div>
                 <Input focus placeholder={this.props.fillerText} id={myId}/>
@@ -25,7 +25,7 @@ export default class EditBox extends React.Component {
             trigger={this.props.trigger}
             content={content}
             on="click"
-            header="Edit Cell Data"
+            header="Edit Day"
             />
         );
     }
