@@ -25,7 +25,7 @@ export default class EditBox extends React.Component {
             trigger={this.props.trigger}
             content={content}
             on="click"
-            header="Edit Cell Data"
+            header="Edit Data"
             />
         );
     }

@@ -2,6 +2,7 @@ import React from "react";
 import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
 import EditBox from "./EditBox";
+import PeriodEditBox from "./PeriodEditBox";
 import {changeCellData, changePeriodData} from "../lib/actions.js";
 
 const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
@@ -37,10 +38,26 @@ const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
     });
 
     // Create our singleton time cell to hold the time label
+    const periodCallback = (event, data, text, tstart, tend) => {
+        var textVal = document.getElementById(text).value;
+        var tStartVal = document.getElementById(tstart).value.toString();
+        var tEndVal = document.getElementById(tend).value.toString();
+        console.debug("A period change was requested! Text: " + textVal + ", starttime: " + tStartVal + ", time end: " + tEndVal + ". Now telling actions.js");
+        changePeriodData(periodKey, textVal, tStartVal, tEndVal);
+    }
     const timeCell = (
-        <Table.Cell key={period.start}>
-            <Label>{period.start} - {period.end}</Label> {period.name} 
-        </Table.Cell>
+        <PeriodEditBox
+            trigger={
+                <Table.Cell key={period.start}>
+                    <Label>{period.start} - {period.end}</Label> {period.name} 
+                </Table.Cell>
+            }
+            onClick={periodCallback}
+            fillerText={period.name}
+            id={"periodeditbox_" + periodKey}
+            key={"periodeditbox-" + periodKey}
+        />
+        
     );
 
     // Use that Array.concat() trick to make a single array

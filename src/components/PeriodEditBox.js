@@ -19,7 +19,7 @@ export default class PeriodEditBox extends React.Component {
                     positive
                     onClick={
                         (event, data) => {
-                            this.props.onClick(event, data, myId);
+                            this.props.onClick(event, data, textId, timeStartId, timeEndId);
                         }
                     }
                 >
