@@ -79,7 +79,7 @@ const Calendar = ({calendarData}) => {
 
   //put it all together, like a sandwich
   return(
-    <Table celled>
+    <Table celled unstackable>
       {header}
       <Table.Body>
         {periodRows}
