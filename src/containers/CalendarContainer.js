@@ -24,7 +24,7 @@ export default class CalendarContainer extends React.Component {
 
     render() {
         return (
-            <Calendar calendarData={this.state.calendarData} />
+            <Calendar calendarData={this.state.calendarData} key="calendar"/>
         );
     }
 }

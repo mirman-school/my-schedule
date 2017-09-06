@@ -92,6 +92,11 @@
                 "periodId": "blerb",
                 "cycleDayId": "blerb",
                 "name": "Science"
+            },
+            "blurb": {
+                "periodId": "blaarb",
+                "cycleDayId": "blirb",
+                "name": "Lunchtime!"
             }
         }
     }
