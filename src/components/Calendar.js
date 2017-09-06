@@ -17,7 +17,8 @@ const Calendar = ({calendarData}) => {
 
   const columnKeys = _.keys(data.cycleDays);
 
-  const periodHeaderCell = (<Table.HeaderCell key={"timeColumn"}></Table.HeaderCell>); 
+  // Spacer cell 
+  const periodHeaderCell = (<Table.HeaderCell key={"timeColumn"}>Time</Table.HeaderCell>); 
 
   // Computed cells
 
@@ -47,6 +48,7 @@ const Calendar = ({calendarData}) => {
 
   // Use Array.concat() to join the spacer cell with the computed ones
   const headerCells = [periodHeaderCell].concat(cycleCells);
+  // const headerCells = cycleCells;
 
   const header = (
     <Table.Header>
@@ -62,7 +64,7 @@ const Calendar = ({calendarData}) => {
   const periodRows =  _.keys(data.periods).map((p) => {
     const period = data.periods[p];
     //const k = "row-" + _.keys(data.periods)[p];
-    console.debug("rendering "+p);
+
     const filteredPeriods = classesByPeriod(data.mySchedule, p);
     return (
         <PeriodRow

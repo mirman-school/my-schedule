@@ -1,5 +1,11 @@
 import React from "react";
-import {getCalendar} from "./lib/actions";
 import {render} from "react-dom";
+//import my components
+import CalendarContainer from "./containers/CalendarContainer";
 
-getCalendar();
+
+render(
+    // the data fetching is done INSIDE CalendarContainer.
+    <CalendarContainer />,
+    document.getElementById("root")
+);
