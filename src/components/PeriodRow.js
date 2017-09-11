@@ -3,7 +3,7 @@ import { Table, Label } from "semantic-ui-react";
 import _ from "lodash";
 import EditBox from "./EditBox";
 import PeriodEditBox from "./PeriodEditBox";
-import {changeCellData, changePeriodData} from "../lib/actions.js";
+import {changeCellData, changePeriodData, deletePeriod} from "../lib/actions.js";
 
 const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
 
@@ -56,6 +56,9 @@ const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
             fillerText={period.name}
             id={"periodeditbox_" + periodKey}
             key={"periodeditbox-" + periodKey}
+            onDelete={() => {
+                deletePeriod(periodKey)
+            }}
         />
         
     );

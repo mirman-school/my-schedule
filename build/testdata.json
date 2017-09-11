@@ -97,6 +97,11 @@
                 "periodId": "blaarb",
                 "cycleDayId": "blirb",
                 "name": "Lunchtime!"
+            },
+            "blaarb": {
+                "periodId": "bladrb",
+                "cycleDayId": "blurb",
+                "name": ""
             }
         }
     }
