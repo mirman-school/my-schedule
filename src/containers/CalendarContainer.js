@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from "../components/Calendar";
+import SourceViewButton from "../components/SourceViewButton";
 
 export default class CalendarContainer extends React.Component {
 
@@ -24,7 +25,10 @@ export default class CalendarContainer extends React.Component {
 
     render() {
         return (
-            <Calendar calendarData={this.state.calendarData} key="calendar"/>
+            <div>
+                <Calendar calendarData={this.state.calendarData} key="calendar"/>
+                <SourceViewButton/>
+            </div>
         );
     }
 }
