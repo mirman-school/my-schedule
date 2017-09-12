@@ -14,6 +14,11 @@ export function changeDayData(day, name){
 export function changePeriodData(period, name, start, end){
     console.debug("Changing period data. Period: " + period + ", name: " + name + ", time: " + start + "-" + end + ".");
 }
+
 export function deletePeriod(period){
     console.debug("Deleting period " + period);
+}
+
+export function deleteDay(day){
+    console.debug("Deleting Day " + day);
 }
