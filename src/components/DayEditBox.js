@@ -7,13 +7,14 @@ export default class DayEditBox extends React.Component {
         var content = (
             <div>
                 <Input focus placeholder={this.props.fillerText} id={myId}/>
+                <br/>
                 <Popup
                     trigger={<Button negative>Delete</Button>}
                     content={
                         <div>
                             <h1>Hey there!</h1>
                             <p>Deleting the day will also delete any cells in the day.</p>
-                            <Button negative onClick={this.props.onDelete()}>I understand. Delete it!</Button>   
+                            <Button negative onClick={this.props.onDelete}>I understand. Delete it!</Button>   
                         </div>
                     }
                     on="click"

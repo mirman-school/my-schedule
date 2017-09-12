@@ -38,7 +38,9 @@ const Calendar = ({calendarData}) => {
             </Table.HeaderCell>
           }
           onClick={callback}
-          onDelete={deleteDay}
+          onDelete={() => {
+            deleteDay(c);
+          }}
           fillerText={cycleDay.name}
           id={"dayeditbox_" + c}
           key={"dayeditbox-" + c}

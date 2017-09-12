@@ -1,72 +1,72 @@
 {
     "testData": {
         "cycleDays": {
-            "blarb": {
+            "a": {
                 "name": "A"
             },
-            "blerb": {
+            "b": {
                 "name": "B"
             },
-            "blirb": {
+            "c": {
                 "name": "C"
             },
-            "blorb": {
+            "d": {
                 "name": "D"
             },
-            "blurb": {
+            "e": {
                 "name": "E"
             },
-            "blyrb": {
+            "f": {
                 "name": "F"
             }
         },
         "periods": {
-            "blarb": {
+            "1": {
                 "name": "Period 1",
                 "start": "8:00",
                 "end": "8:50"
             },
-            "blerb": {
+            "2": {
                 "name": "Period 2",
                 "start": "8:50",
                 "end": "9:40"
             },
-            "blirb": {
+            "3": {
                 "name": "Period 3",
                 "start": "9:40",
                 "end": "10:30"
             },
-            "blorb": {
+            "4": {
                 "name": "Recess",
                 "start": "10:30",
                 "end": "10:45"
             },
-            "blurb": {
+            "5": {
                 "name": "Period 4",
                 "start": "10:45",
                 "end": "11:35"
             },
-            "blyrb": {
+            "6": {
                 "name": "Period 5",
                 "start": "11:35",
                 "end": "12:25"
             },
-            "blaarb": {
+            "7": {
                 "name": "Lunch",
                 "start": "12:25",
                 "end": "1:00"
             },
-            "blabrb": {
+            "8": {
                 "name": "Period 6",
                 "start": "1:00",
                 "end": "1:50"
             },
-            "blacrb": {
+            "9": {
                 "name": "Period 7",
                 "start": "1:50",
                 "end": "2:40"
             },
-            "bladrb": {
+            "10": {
                 "name": "Period 8",
                 "start": "2:40",
                 "end": "3:30"
@@ -74,34 +74,34 @@
         },
         "mySchedule": {
             "blarb": {
-                "periodId": "blarb",
-                "cycleDayId": "blarb",
+                "periodId": "1",
+                "cycleDayId": "a",
                 "name": "English"
             },
             "blerb": {
-                "periodId": "blerb",
-                "cycleDayId": "blarb",
+                "periodId": "1",
+                "cycleDayId": "b",
                 "name": "Math"
             },
             "blirb": {
-                "periodId": "blarb",
-                "cycleDayId": "blerb",
+                "periodId": "1",
+                "cycleDayId": "c",
                 "name": "Social Studies"
             },
             "blorb": {
-                "periodId": "blerb",
-                "cycleDayId": "blerb",
+                "periodId": "1",
+                "cycleDayId": "d",
                 "name": "Science"
             },
             "blurb": {
-                "periodId": "blaarb",
-                "cycleDayId": "blirb",
-                "name": "Lunchtime!"
+                "periodId": "7",
+                "cycleDayId": "a",
+                "name": "Hot Dog, with 20% more hot!"
             },
             "blaarb": {
-                "periodId": "bladrb",
-                "cycleDayId": "blurb",
-                "name": ""
+                "periodId": "1",
+                "cycleDayId": "f",
+                "name": "XSS <script>alert('hi')</script>"
             }
         }
     }

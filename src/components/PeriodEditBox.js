@@ -15,16 +15,16 @@ export default class PeriodEditBox extends React.Component {
                 <Input type="time" id={timeStartId} />
                 <h2>Time End</h2>
                 <Input type="time" id={timeEndId} />
+                <br/>
                 <Popup
                     trigger={
                         <Button negative>Delete</Button>
                     }
                     content={
                         <div>
-                            <h1>Are you sure?</h1>
-                            <p>Deleting the period will also delete all cells within!</p>
-                            <p>P.S. Tell eric to push his commits from his other laptop then edit this text!</p>
-                            <Button negative onClick={this.props.onDelete}>period go boom boom!</Button>
+                        <h1>Hey there!</h1>
+                        <p>Deleting the period will also delete any cells in the period.</p>
+                        <Button negative onClick={this.props.onDelete}>I understand. Delete it!</Button>   
                         </div>
                     }
                     on="click"
