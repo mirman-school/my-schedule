@@ -22,3 +22,11 @@ export function deletePeriod(period){
 export function deleteDay(day){
     console.debug("Deleting Day " + day);
 }
+
+export function addDay(){
+    console.debug("Adding a new day!");
+}
+
+export function addPeriod(){
+    console.debug("Adding a new period!");
+}

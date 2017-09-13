@@ -1,7 +1,8 @@
 import React from "react";
 import Calendar from "../components/Calendar";
 import SourceViewButton from "../components/SourceViewButton";
-
+import AddDay from "../components/AddDay";
+import AddPeriod from "../components/AddPeriod";
 export default class CalendarContainer extends React.Component {
 
     constructor(props) {
@@ -27,6 +28,8 @@ export default class CalendarContainer extends React.Component {
         return (
             <div>
                 <Calendar calendarData={this.state.calendarData} key="calendar"/>
+                <AddDay/>
+                <AddPeriod/>
                 <SourceViewButton/>
             </div>
         );
