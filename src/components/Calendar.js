@@ -5,7 +5,7 @@ import _ from "lodash";
 import PeriodRow from "./PeriodRow";
 import { classesByPeriod } from "../lib/functions";
 import DayEditBox from "./DayEditBox";
-import { changeDayData } from "../lib/actions";
+import { changeDayData, deleteDay } from "../lib/actions";
 
 const Calendar = ({calendarData}) => {
 
@@ -38,6 +38,9 @@ const Calendar = ({calendarData}) => {
             </Table.HeaderCell>
           }
           onClick={callback}
+          onDelete={() => {
+            deleteDay(c);
+          }}
           fillerText={cycleDay.name}
           id={"dayeditbox_" + c}
           key={"dayeditbox-" + c}

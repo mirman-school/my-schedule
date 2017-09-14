@@ -1,5 +1,9 @@
 import React from "react";
 import Calendar from "../components/Calendar";
+
+import SourceViewButton from "../components/SourceViewButton";
+import AddDay from "../components/AddDay";
+import AddPeriod from "../components/AddPeriod";
 import config from "../config";
 import firebase from "firebase";
 
@@ -30,7 +34,12 @@ export default class CalendarContainer extends React.Component {
 
     render() {
         return (
-            <Calendar calendarData={this.state.calendarData} key="calendar"/>
+            <div>
+                <Calendar calendarData={this.state.calendarData} key="calendar"/>
+                <AddDay/>
+                <AddPeriod/>
+                <SourceViewButton/>
+            </div>
         );
     }
 }

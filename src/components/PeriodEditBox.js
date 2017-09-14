@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Popup, Input } from 'semantic-ui-react'
+import { Button, Popup, Input, Header, Divider } from 'semantic-ui-react'
 
 export default class PeriodEditBox extends React.Component {
 
@@ -15,6 +15,20 @@ export default class PeriodEditBox extends React.Component {
                 <Input type="time" id={timeStartId} />
                 <h2>Time End</h2>
                 <Input type="time" id={timeEndId} />
+                <Divider/>
+                <Popup
+                    trigger={
+                        <Button negative>Delete</Button>
+                    }
+                    content={
+                        <div>
+                        <Header as="h1">Hey there!</Header>
+                        <p>Deleting the period will also delete any cells in the period.</p>
+                        <Button negative onClick={this.props.onDelete}>I understand. Delete it!</Button>   
+                        </div>
+                    }
+                    on="click"
+                />
                 <Button
                     positive
                     onClick={
