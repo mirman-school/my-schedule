@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Popup, Input, Heading } from 'semantic-ui-react';
+import { Button, Popup, Input, Heading, Divider } from 'semantic-ui-react';
 export default class DayEditBox extends React.Component {
 
     render(){
@@ -7,7 +7,7 @@ export default class DayEditBox extends React.Component {
         var content = (
             <div>
                 <Input focus placeholder={this.props.fillerText} id={myId}/>
-                <br/>
+                <Divider/>
                 <Popup
                     trigger={<Button negative>Delete</Button>}
                     content={
