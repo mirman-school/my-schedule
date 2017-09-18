@@ -15,7 +15,7 @@ export default class SourceViewButton extends React.Component {
                     <div style={{textAlign: "center"}}>
                         <p>Made with <Icon name="heart" color="red" onClick={() => {
                             console.log("Let's make this page really ugly! With comic sans!");
-                            document.getElementById("root").className = "lolified";   
+                            document.getElementById("root").className = "lolified";
                         }}/> by The Mirman School</p>
                         <Button onClick={() => {
                             window.open("https://github.com/mirman-school/my-schedule");    
