@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Popup, Input, Heading, Divider } from 'semantic-ui-react';
+import { Button, Popup, Input, Header, Divider } from 'semantic-ui-react';
 export default class DayEditBox extends React.Component {
 
     render(){
@@ -12,7 +12,7 @@ export default class DayEditBox extends React.Component {
                     trigger={<Button negative>Delete</Button>}
                     content={
                         <div>
-                            <Heading as="h1">Hey there!</Heading>
+                            <Header as="h1">Hey there!</Header>
                             <p>Deleting the day will also delete any cells in the day.</p>
                             <Button negative onClick={this.props.onDelete}>I understand. Delete it!</Button>   
                         </div>
