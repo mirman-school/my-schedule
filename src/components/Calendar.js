@@ -82,7 +82,7 @@ const Calendar = ({calendarData}) => {
 
   //put it all together, like a sandwich
   return(
-    <Table celled unstackable id="calendar">
+    <Table celled unstackable striped id="calendar">
       {header}
       <Table.Body>
         {periodRows}
