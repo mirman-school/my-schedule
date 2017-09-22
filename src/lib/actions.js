@@ -3,6 +3,24 @@ import {render} from "react-dom";
 //import my components
 import CalendarContainer from "../containers/CalendarContainer";
 import SourceViewButton from "../components/SourceViewButton";
+import SignIn from "../components/SignIn";
+
+export function renderComponents(){
+    var signedIn = false;
+    if(signedIn){
+        render(
+            // the data fetching is done INSIDE CalendarContainer.
+            <CalendarContainer />,
+            document.getElementById("root")
+        );
+    }else{
+        render(
+            <SignIn />,
+            document.getElementById("root")
+        );
+    }
+    
+}
 
 export function changeCellData(day, period, newVal){
     console.debug("Changing cell data. Day: " + day + ", period: " + period + ", new value: " + newVal);
