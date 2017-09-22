@@ -6,7 +6,7 @@ import SourceViewButton from "../components/SourceViewButton";
 import SignIn from "../components/SignIn";
 
 export function renderComponents(){
-    var signedIn = false;
+    var signedIn = true;
     if(signedIn){
         render(
             // the data fetching is done INSIDE CalendarContainer.
