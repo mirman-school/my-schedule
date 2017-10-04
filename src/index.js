@@ -1,4 +1,8 @@
 import React from "react";
-import { renderComponents } from "./lib/actions";
+import CalOrSignIn from "./containers/CalOrSignIn";
+import {render} from "react-dom";
 
-renderComponents();
+render(
+        <CalOrSignIn />,
+        document.getElementById("root")
+);
