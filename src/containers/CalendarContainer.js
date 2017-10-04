@@ -17,6 +17,8 @@ export default class CalendarContainer extends React.Component {
         const firebaseConfig = config.firebase;
         firebase.initializeApp(firebaseConfig);
 
+        const db = firebase.firestore();
+
         fetch("../../testdata.json", {
             method: "get"
         }).then((response) => {
