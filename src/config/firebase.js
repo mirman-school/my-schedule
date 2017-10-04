@@ -1,8 +1,8 @@
 export default {
-    apiKey: "AIzaSyBUCIjDLqsFxem4gxinzei46UeRHCIppLs",
-    authDomain: "my-schedule-deb36.firebaseapp.com",
-    databaseURL: "https://my-schedule-deb36.firebaseio.com",
-    projectId: "my-schedule-deb36",
-    storageBucket: "my-schedule-deb36.appspot.com",
-    messagingSenderId: "1087688681877"
-}
+    apiKey: "AIzaSyA3ITI_g6Tcm-sNBAB9O9O_tIdSTZZia4s",
+    authDomain: "mirman-student-scheduler.firebaseapp.com",
+    databaseURL: "https://mirman-student-scheduler.firebaseio.com",
+    projectId: "mirman-student-scheduler",
+    storageBucket: "mirman-student-scheduler.appspot.com",
+    messagingSenderId: "815436808592"
+} 
