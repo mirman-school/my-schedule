@@ -1,8 +1,8 @@
 import React from "react";
-import CalOrSignIn from "./containers/CalOrSignIn";
+import CalendarContainer from "./containers/CalendarContainer";
 import {render} from "react-dom";
 
 render(
-        <CalOrSignIn />,
+        <CalendarContainer />,
         document.getElementById("root")
 );

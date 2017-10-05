@@ -5,7 +5,7 @@ import SourceViewButton from "../components/SourceViewButton";
 import AddDay from "../components/AddDay";
 import AddPeriod from "../components/AddPeriod";
 import config from "../config";
-//import firebase from "firebase";
+import firebase from "firebase";
 
 export default class CalendarContainer extends React.Component {
 
@@ -18,21 +18,38 @@ export default class CalendarContainer extends React.Component {
 
     componentDidMount() {
         // Firebase initialization. Does not do auth
-        //const firebaseConfig = config.firebase;
-        //firebase.initializeApp(firebaseConfig);
+        const firebaseConfig = config.firebase;
 
-        const db = firebase.firestore();
+        
+        firebase.initializeApp(firebaseConfig);
 
-        fetch("../../testdata.json", {
-            method: "get"
-        }).then((response) => {
-            return response.json();
-        }).then((json) => {
-            const calendarData = json.testData;
-            this.setState({calendarData});
-        }) 
+        //const db = firebase.firestore();
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            var token = result.credential.accessToken; //seeecret
+            var user = result.user;
+
+            // ************************************************************
+            // *DELETE THIS CONSOLE.LOG WHEN DONE TO AVOID SECURITY FLAWS!*
+            // ************************************************************
+            console.log(user);
+
+            }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+
+            // ************************************************************
+            // *DELETE THIS CONSOLE.LOG WHEN DONE TO AVOID SECURITY FLAWS!*
+            // ************************************************************
+            console.log("We couldnt log in! Err: " + errorCode + ", errmsg: " + errorMessage + ", email: " + email + ", cred: " + credential);
+        });
+
 
     }
+
+
 
     render() {
         return (
