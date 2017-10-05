@@ -43,7 +43,7 @@ export default class CalendarContainer extends React.Component {
             // ************************************************************
             // *DELETE THIS CONSOLE.LOG WHEN DONE TO AVOID SECURITY FLAWS!*
             // ************************************************************
-            console.log("We couldnt log in! Err: " + errorCode + ", errmsg: " + errorMessage + ", email: " + email + ", cred: " + credential);
+            console.error("We couldnt log in! Err: " + errorCode + ", errmsg: " + errorMessage + ", email: " + email + ", cred: " + credential);
         });
 
 
