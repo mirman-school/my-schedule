@@ -16,6 +16,16 @@
     "default_title": "My Schedule",
     "default_popup": "index.html"
  },
- "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'" 
-
+ "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+ "permissions": [
+     "identity",
+     "storage"
+ ],
+ "oauth2": {
+    "client_id": "815436808592-ivmpfhet0mppbgem7sjtes5ehg4r78hk.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
 }

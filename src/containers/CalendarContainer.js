@@ -25,26 +25,26 @@ export default class CalendarContainer extends React.Component {
 
         //const db = firebase.firestore();
         var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-            var token = result.credential.accessToken; //seeecret
-            var user = result.user;
-
-            // ************************************************************
-            // *DELETE THIS CONSOLE.LOG WHEN DONE TO AVOID SECURITY FLAWS!*
-            // ************************************************************
-            console.log(user);
-
-            }).catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            var email = error.email;
-            var credential = error.credential;
-
-            // ************************************************************
-            // *DELETE THIS CONSOLE.LOG WHEN DONE TO AVOID SECURITY FLAWS!*
-            // ************************************************************
-            console.error("We couldnt log in! Err: " + errorCode + ", errmsg: " + errorMessage + ", email: " + email + ", cred: " + credential);
-        });
+        var credential;
+        if(false){ //if cookie
+            credential = chrome.storage.sync.get("cred", function(res){
+                credential = res.cred;
+            });
+        }else{
+            //else get cred from chrome
+            chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
+                credential = firebase.auth.GoogleAuthProvider.credential(null, token);
+            });
+            chrome.storage.sync.set({'cred': credential}, function() {
+                console.log("My Schedule firebase cred saved in chrome.storage");
+            });
+        }
+        console.log(credential);
+        firebase.auth().signInWithCredential(credential);
+        
+        
+        
+        
 
 
     }
