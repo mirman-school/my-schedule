@@ -28,9 +28,9 @@ chrome.runtime.onInstalled.addListener(function(){
             chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
                 console.log("Successfully retrieved chrome auth token. Token:");
                 console.log(token);
-                credential = firebase.auth.GoogleAuthProvider.credential(token);
-                chrome.storage.sync.set({"cred": credential}, function() {
-                    console.log("Extracted firebase cred, now saving the cred in chrome storage");
+                
+                chrome.storage.sync.set({"cred": token}, function() {
+                    console.log("Got token, saving it now");
                     if(chrome.runtime.error){
                         console.error("Whoa there! We found a chrome runtime error in storage.set!");
                     }
