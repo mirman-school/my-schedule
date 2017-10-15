@@ -2,10 +2,13 @@ var webpack = require("webpack");
 var path = require("path");
 
 module.exports = {
-  entry: "./src",
+  entry: {
+    index: "./src",
+    bg: "./bg_src"
+  },
   output: {
     path: path.join(__dirname, "build/assets/js"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     publicPath: "/assets/js"
   },
   module: {
