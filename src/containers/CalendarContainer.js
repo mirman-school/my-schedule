@@ -36,8 +36,8 @@ export default class CalendarContainer extends React.Component {
     if(data !== null && data !== undefined){
         console.log("Calcon: We got the data, and it's not null");
         firebase.initializeApp(firebaseConfig);
-        var credential = firebase.auth.GoogleAuthProvider.credential(data);
-        firebase.auth().signInWithCredential(null, credential).catch(function(err){ //https://github.com/firebase/quickstart-js/issues/133
+        var credential = firebase.auth.GoogleAuthProvider.credential(null, data); //Wow. I spent 3 hours on this, and all I had to do was add "null, "
+        firebase.auth().signInWithCredential(credential).catch(function(err){ //https://github.com/firebase/quickstart-js/issues/133... oh no now i'm getting this... https://github.com/prescottprue/react-redux-firebase/issues/87
             var errorCode = error.code;
             var errorMessage = error.message;
             var email = error.email;
