@@ -37,7 +37,8 @@ export default class CalendarContainer extends React.Component {
         console.log("Calcon: We got the data, and it's not null");
         firebase.initializeApp(firebaseConfig);
         var credObj = Object.create(firebase.auth.AuthCredential, data); //this is equivalent to casting... and I have to do this because it wants its own Interface, not my jsobj! Appearently, when storing with chrome.storage, it gets converted. DISCLAIMER this is my assumption not fact, so i'm not 100% sure that this is the right way to do it...
-        firebase.auth().signInWithCredential(data).catch(function(err){
+        
+        firebase.auth().signInWithCredential(credObj).catch(function(err){
             var errorCode = error.code;
             var errorMessage = error.message;
             var email = error.email;
