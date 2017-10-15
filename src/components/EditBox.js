@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Popup, Input } from 'semantic-ui-react'
+import { Button, Popup, Input } from 'semantic-ui-react';
 
 export default class EditBox extends React.Component {
 

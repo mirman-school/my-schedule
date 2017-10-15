@@ -17,22 +17,47 @@ export default class CalendarContainer extends React.Component {
     }
 
     componentDidMount() {
-        // Firebase initialization. Does not do auth
-        const firebaseConfig = config.firebase;
-        firebase.initializeApp(firebaseConfig);
-
-        const db = firebase.firestore();
-
-        fetch("../../testdata.json", {
-            method: "get"
-        }).then((response) => {
-            return response.json();
-        }).then((json) => {
-            const calendarData = json.testData;
-            this.setState({calendarData});
-        }) 
-
+    const firebaseConfig = config.firebase;
+    var data = null;
+    chrome.storage.sync.get("cred", function(res){
+    console.log("CalCon: TRYING to get cred from chrome storage...")
+    if(chrome.runtime.error){
+        console.error("CalCon: Whoa there! We found a chrome runtime error in storage.get!");
+        data = null;
+    }else{
+        console.log("CalCon: Res:");
+        console.log(res);
+        console.log("CalCon: Data (access token):");
+        data = res.cred; //ok, let's try to get the token, not the actual cred, because it jsonifies it
+        console.log(data);
+        console.log("CalCon: Data get success. It still may be null at this point.");
     }
+
+    if(data !== null && data !== undefined){
+        console.log("Calcon: We got the data, and it's not null");
+        firebase.initializeApp(firebaseConfig);
+        var credential = firebase.auth.GoogleAuthProvider.credential(null, data); //Wow. I spent 3 hours on this, and all I had to do was add "null, "
+        firebase.auth().signInWithCredential(credential).catch(function(err){ //https://github.com/firebase/quickstart-js/issues/133... oh no now i'm getting this... https://github.com/prescottprue/react-redux-firebase/issues/87
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+            console.error('Failed to login user ' + email + " with cred " + credential + ". Code: " + errorCode + ", msg: " + errorMessage);
+        });
+    }else{
+        console.error("CalCon: Chrome storage data is NULL! You'll have to tell background.js...");
+        console.log(data);
+    }
+
+    });
+}
+
+        
+        
+        
+    
+
+
 
     render() {
         return (

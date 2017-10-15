@@ -49,7 +49,7 @@ const PeriodRow = ({period, periodClasses, cycleDays, periodKey}) => {
         <PeriodEditBox
             trigger={
                 <Table.Cell key={period.start}>
-                    <Label>{period.start} - {period.end}</Label> {period.name} 
+                    <Label>{period.start} - {period.end}</Label> <b>{period.name}</b>
                 </Table.Cell>
             }
             onClick={periodCallback}
