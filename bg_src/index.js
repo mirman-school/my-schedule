@@ -8,29 +8,19 @@ chrome.runtime.onInstalled.addListener(function(){
     var credential;
     var data;
     chrome.storage.sync.get("cred", function(res){
-        console.log("TRYING to get cred from chrome storage...")
         if(chrome.runtime.error){
             console.error("Whoa there! We found a chrome runtime error in storage.get!");
             data = null;
         }else{
-            console.log("Res:");
-            console.log(res);
-            console.log("Data (get .idToken to get raw string):");
             data = res.cred;
-            console.log(data);
-            console.log("Data get success. It still may be null at this point.");
         }
         
             
         if(data == null || data == undefined){ //if there is no storage
             //else get cred from chrome
-            console.log("Data is null. Now getting auth token from chrome identity...");
-            chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-                console.log("Successfully retrieved chrome auth token. Token:");
-                console.log(token);
+                chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
                 
                 chrome.storage.sync.set({"cred": token}, function() {
-                    console.log("Got token, saving it now");
                     if(chrome.runtime.error){
                         console.error("Whoa there! We found a chrome runtime error in storage.set!");
                     }
@@ -38,7 +28,8 @@ chrome.runtime.onInstalled.addListener(function(){
                 });
             });
         }else{
-            console.log("There is storage!!");
+            //there is storage, no need to go through this again...
+
         }
         
     });
