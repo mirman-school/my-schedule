@@ -3,8 +3,7 @@ var path = require("path");
 
 module.exports = {
   entry: {
-    index: "./src",
-    bg: "./bg_src"
+    index: "./src"
   },
   output: {
     path: path.join(__dirname, "build/assets/js"),
