@@ -22,33 +22,43 @@ export default class CalendarContainer extends React.Component {
 
     firebase.initializeApp(firebaseConfig);
     chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-        console.log(token);
-        var credential = firebase.auth.GoogleAuthProvider.credential(null, token);
-        console.log(credential);
+        //console.log(token);
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('profile');
+        var credential = provider.credential(null, token);
+        //console.log(credential);
         firebase.auth().signInWithCredential(credential).then(function(result){
-            console.log("Signed in!");
+            console.log("Signed in!!");
             var token = result.accessToken;
             var user = result.user;
-            var uid = user.uid;
-            var db = firebase.firestore();
-            var docname = "hello";
-            var docRef = db.collection(docname).doc(uid);
-        
-            docRef.get().then(function(doc) {
-                if (doc.exists) {
+            chrome.identity.getProfileUserInfo(function(identity){
+                var uid = identity.id;
+                console.log(identity);
+                var db = firebase.firestore();
+                var docname = "users";
+                var docRef = db.collection(docname).doc(uid);
+            
+                docRef.get().then(function(doc) {
+                    if (doc.exists) {
+                        console.log(doc.data);
 
-                }else{
-                    console.log("No such document! Creating one.");
-                    db.collection(docname).doc(uid).set({
-                        "ilikedata": true
-                    }).then(function(){
-                        console.log("Document created!");
-                    });
-                }
-
-            }).catch(function(err){
+                    }else{
+                        console.log("No such document! Creating one...");
+                        db.collection(docname).doc(uid).set({
+                            "cells": [],
+                            "days": [],
+                            "periods": []
+                        }).then(function(){
+                            console.log("Document created!");
+                        });
+                    }
+                }).catch(function(err){
                 console.error("Error getting doc: " + err);
+                });
+
             });
+            
+            
         }).catch(function(error){ //https://github.com/firebase/quickstart-js/issues/133... oh no now i'm getting this... https://github.com/prescottprue/react-redux-firebase/issues/87
             var errorCode = error.code;
             var errorMessage = error.message;
