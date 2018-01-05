@@ -3,10 +3,10 @@ var path = require("path");
 
 module.exports = {
   entry: {
-    index: "./src"
+    index: "./Frontend/src"
   },
   output: {
-    path: path.join(__dirname, "build/assets/js"),
+    path: path.join(__dirname, "Frontend/build/assets/js"),
     filename: "[name].bundle.js",
     publicPath: "/assets/js"
   },

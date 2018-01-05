@@ -1,0 +1,18 @@
+body {
+  width: 700px;
+}
+
+#loadingMsg {
+  text-align: center;
+  padding-bottom: 200px;
+  /*We have theS padding because sometimes there is a glitch where it collapses to this height...*/
+}
+
+@font-face {
+  font-family: 'Comic Sans';
+  src: url("../fonts/Comic Sans MS.ttf");
+}
+
+.lolified {
+  font-family: "Comic Sans";
+}

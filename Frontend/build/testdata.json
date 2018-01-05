@@ -1,0 +1,343 @@
+{
+    "testData": {
+        "cycleDays": {
+            "a": {
+                "name": "A"
+            },
+            "b": {
+                "name": "B"
+            },
+            "c": {
+                "name": "C"
+            },
+            "d": {
+                "name": "D"
+            },
+            "e": {
+                "name": "E"
+            },
+            "f": {
+                "name": "F"
+            }
+        },
+        "periods": {
+            "1": {
+                "name": "Period 1",
+                "start": "8:00",
+                "end": "8:47"
+            },
+            "2": {
+                "name": "Period 2",
+                "start": "8:50",
+                "end": "9:37"
+            },
+            "3": {
+                "name": "Period 3",
+                "start": "9:40",
+                "end": "10:27"
+            },
+            "4": {
+                "name": "Period 4",
+                "start": "10:45",
+                "end": "11:32"
+            },
+            "5": {
+                "name": "Period 5",
+                "start": "11:35",
+                "end": "12:22"
+            },
+            "6": {
+                "name": "Period 6",
+                "start": "1:00",
+                "end": "1:47"
+            },
+            "7": {
+                "name": "Period 7",
+                "start": "1:50",
+                "end": "2:37"
+            },
+            "8": {
+                "name": "Period 8",
+                "start": "2:40",
+                "end": "3:27"
+            }
+        },
+        "mySchedule": {
+            "blarb": {
+                "periodId": "1",
+                "cycleDayId": "a",
+                "name": "Algebra II"
+            },
+            "blerb": {
+                "periodId": "1",
+                "cycleDayId": "b",
+                "name": "Spanish III"
+            },
+            "blirb": {
+                "periodId": "1",
+                "cycleDayId": "c",
+                "name": "English III"
+            },
+            "blorb": {
+                "periodId": "1",
+                "cycleDayId": "d",
+                "name": "Spanish III"
+            },
+            "blurb": {
+                "periodId": "1",
+                "cycleDayId": "e",
+                "name": "Flex RM16"
+            },
+            "blyrb": {
+                "periodId": "1",
+                "cycleDayId": "f",
+                "name": "Spanish III"
+            },
+
+            
+            
+
+            
+            "blaarb": {
+                "periodId": "2",
+                "cycleDayId": "a",
+                "name": "Science III"
+            },
+            "blaerb": {
+                "periodId": "2",
+                "cycleDayId": "b",
+                "name": "Theatre III"
+            },
+            "blairb": {
+                "periodId": "2",
+                "cycleDayId": "c",
+                "name": "Spanish III"
+            },
+            "blaorb": {
+                "periodId": "2",
+                "cycleDayId": "d",
+                "name": "Social Studies III"
+            },
+            "blaurb": {
+                "periodId": "2",
+                "cycleDayId": "e",
+                "name": "English III"
+            },
+            "blayrb": {
+                "periodId": "2",
+                "cycleDayId": "f",
+                "name": "Science III"
+            },
+
+
+
+
+            
+            "blearb": {
+                "periodId": "3",
+                "cycleDayId": "a",
+                "name": "Theatre III"
+            },
+            "bleerb": {
+                "periodId": "3",
+                "cycleDayId": "b",
+                "name": "Social Studies III"
+            },
+            "bleirb": {
+                "periodId": "3",
+                "cycleDayId": "c",
+                "name": "Algebra III"
+            },
+            "bleorb": {
+                "periodId": "3",
+                "cycleDayId": "d",
+                "name": "Flex RM16"
+            },
+            "bleurb": {
+                "periodId": "3",
+                "cycleDayId": "e",
+                "name": "Social Studies III"
+            },
+            "bleyrb": {
+                "periodId": "3",
+                "cycleDayId": "f",
+                "name": "Social Studies III"
+            },
+
+
+
+
+
+            "bloarb": {
+                "periodId": "4",
+                "cycleDayId": "a",
+                "name": "Social Studies III"
+            },
+            "bloerb": {
+                "periodId": "4",
+                "cycleDayId": "b",
+                "name": "Flex RM16"
+            },
+            "bloirb": {
+                "periodId": "4",
+                "cycleDayId": "c",
+                "name": "DCB"
+            },
+            "bloorb": {
+                "periodId": "4",
+                "cycleDayId": "d",
+                "name": "DCB"
+            },
+            "blourb": {
+                "periodId": "4",
+                "cycleDayId": "e",
+                "name": "Theatre III"
+            },
+            "bloyrb": {
+                "periodId": "4",
+                "cycleDayId": "f",
+                "name": "English III"
+            },
+
+
+
+
+            "bluarb": {
+                "periodId": "5",
+                "cycleDayId": "a",
+                "name": "Spanish III"
+            },
+            "bluerb": {
+                "periodId": "5",
+                "cycleDayId": "b",
+                "name": "Science III"
+            },
+            "bluirb": {
+                "periodId": "5",
+                "cycleDayId": "c",
+                "name": "Theatre III"
+            },
+            "bluorb": {
+                "periodId": "5",
+                "cycleDayId": "d",
+                "name": "Algebra II"
+            },
+            "bluurb": {
+                "periodId": "5",
+                "cycleDayId": "e",
+                "name": "Science III"
+            },
+            "bluyrb": {
+                "periodId": "5",
+                "cycleDayId": "f",
+                "name": "Theatre III"
+            },
+
+
+
+
+
+
+            "blyarb": {
+                "periodId": "6",
+                "cycleDayId": "a",
+                "name": "English III"
+            },
+            "blyerb": {
+                "periodId": "6",
+                "cycleDayId": "b",
+                "name": "Algebra II"
+            },
+            "blyirb": {
+                "periodId": "6",
+                "cycleDayId": "c",
+                "name": "Science III"
+            },
+            "blyorb": {
+                "periodId": "6",
+                "cycleDayId": "d",
+                "name": "English II"
+            },
+            "blyurb": {
+                "periodId": "6",
+                "cycleDayId": "e",
+                "name": "Algebra II"
+            },
+            "blyyrb": {
+                "periodId": "6",
+                "cycleDayId": "f",
+                "name": "Algebra II"
+            },
+            
+
+
+
+            "blaaarb": {
+                "periodId": "7",
+                "cycleDayId": "a",
+                "name": "LEAP"
+            },
+            "blaaerb": {
+                "periodId": "7",
+                "cycleDayId": "b",
+                "name": "Music Production"
+            },
+            "blaairb": {
+                "periodId": "7",
+                "cycleDayId": "c",
+                "name": "Exploring Electricity"
+            },
+            "blaaorb": {
+                "periodId": "7",
+                "cycleDayId": "d",
+                "name": "LEAP"
+            },
+            "blaaurb": {
+                "periodId": "7",
+                "cycleDayId": "e",
+                "name": "Music Production"
+            },
+            "blaayrb": {
+                "periodId": "7",
+                "cycleDayId": "f",
+                "name": "Exploring Electricity"
+            },
+
+
+
+
+
+            "blaearb": {
+                "periodId": "8",
+                "cycleDayId": "a",
+                "name": "P.E. III"
+            },
+            "blaeerb": {
+                "periodId": "8",
+                "cycleDayId": "b",
+                "name": "P.E. III"
+            },
+            "blaeirb": {
+                "periodId": "8",
+                "cycleDayId": "c",
+                "name": "Advisory"
+            },
+            "blaeorb": {
+                "periodId": "8",
+                "cycleDayId": "d",
+                "name": "P.E. III"
+            },
+            "blaeurb": {
+                "periodId": "8",
+                "cycleDayId": "e",
+                "name": "P.E. III"
+            },
+            "blaeyrb": {
+                "periodId": "8",
+                "cycleDayId": "f",
+                "name": "Advisory"
+            }
+            
+        }
+    }
+}
