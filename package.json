@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "react-center": "^1.1.1",
-    "semantic-ui-react": "^0.71.3"
+    "semantic-ui-react": "^0.71.3",
+    "webpack-dev-server": "^2.11.1"
   }
 }
